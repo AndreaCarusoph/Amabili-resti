@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amabili Resti – Mostra Fotografica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Menu Hamburger -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Menu laterale -->
+ <nav id="sideMenu" class="menu">
+  <ul>
+    <li><a href="#" onclick="event.preventDefault(); showSection('home')">Home</a></li>
+    <li><a href="#" onclick="event.preventDefault(); showSection('sulla-mostra')">Sulla mostra</a></li>
+    <li><a href="#" onclick="event.preventDefault(); showSection('date')">Date</a></li>
+    <li><a href="#" onclick="event.preventDefault(); showSection('galleria')">Galleria</a></li>
+    <li><a href="#" onclick="event.preventDefault(); showSection('contatti')">Contatti</a></li>
+  </ul>
+</nav>
+
+  <!-- Sezione Home -->
+  <main id="home" class="hero sezione">
+    <img src="img/coming-soon.jpg" alt="Coming Soon" class="hero-image" />
+    <p class="curatore">A cura di Andrea Caruso</p>
+  </main>
+
+ <!-- Sezione: Sulla mostra -->
+<section id="sulla-mostra" class="sezione nascosta">
+  <h2>Sulla mostra</h2>
+  <p>
+    <strong>“Amabili Resti – Il grido di chi non ce l’ha fatta”</strong> è molto più di una mostra fotografica: è un atto di denuncia, un memoriale visivo, una richiesta silenziosa di ascolto e consapevolezza.
+  </p>
+  <p>
+    Dodici fotografie raccontano dodici storie. Storie vere, spezzate, dimenticate, ignorate. Non troverai immagini rassicuranti, né bellezza accomodante: qui ci sono corpi stesi, silenzi pesanti, oggetti sparsi in stanze vuote, e quel sangue che nessuno vuole più vedere.
+  </p>
+  <p>
+    Ogni scatto è stato costruito partendo da fatti realmente accaduti. Le scene sono fedeli alla verità, ricostruite con rispetto ma senza filtri. Non ci sono attori, c'è chi ha prestato il proprio volto per dare memoria a chi non può più raccontarsi.
+  </p>
+  <p>
+    Le immagini non cercano il sensazionalismo: vogliono ferire dove serve. Ferire il torpore dell’indifferenza, disturbare il privilegio di chi può voltarsi dall’altra parte. Perché il femminicidio è un fatto culturale, strutturale, sistemico. E continua a succedere ogni giorno.
+  </p>
+  <p>
+    “Amabili Resti” è a cura di <strong>Andrea Caruso</strong>. Un progetto indipendente, crudo, emotivo. È pensato per scuotere, per fare memoria, e soprattutto per chiedere: dov’eri tu mentre lei moriva?
+  </p>
+</section>
+
+
+  <!-- Sezione: Date -->
+  <section id="date" class="sezione nascosta">
+    <h2>Date</h2>
+    <p>Ecco le prime tappe previste per la mostra:</p>
+    <ul>
+      <li><strong>Oppeano (VR)</strong> – 10/2025</li>
+      <li><strong>Isola Rizza (VR)</strong> – 11/2025</li>
+      <li><strong>Verona</strong> – 11/2025</li>
+      <li><strong>Palermo</strong> – 12/2025</li>
+    </ul>
+    <p>Ulteriori date verranno comunicate.</p>
+  </section>
+
+  <!-- Sezione: Contatti -->
+  <section id="contatti" class="sezione nascosta">
+    <h2>Contatti</h2>
+    <p>Email: <a href="mailto:info@andreacaruso.art">info@andreacaruso.art</a></p>
+    <p>Instagram: <a href="https://instagram.com/andreacarusophotography" target="_blank">@andreacarusophotography</a></p>
+    <p>Telefono: 388 726 2828</p>
+
+ <form id="contactForm">
+  <label for="nome">Nome</label>
+  <input type="text" id="nome" name="nome" required />
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="messaggio">Messaggio</label>
+  <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+
+  <button type="submit">Invia</button>
+</form>
+
+<div id="grazieMessaggio" class="popup-grazie">
+  <p>Grazie per averci contattati,<br>ti risponderemo al più presto.</p>
+</div>
+
+    </section>
+<!-- Sezione: Galleria Fotografica -->
+<section id="galleria" class="sezione nascosta">
+  <h2>Galleria Fotografica</h2>
+  <div class="galleria">
+    <div class="foto">
+      <img src="img/foto1.jpg" alt="Foto 1" onclick="openModal(this.src)" />
+      <p class="didascalia">Foto 1 – Esplode il silenzio</p>
+    </div>
+    <div class="foto">
+      <img src="img/foto2.jpg" alt="Foto 2" onclick="openModal(this.src)" />
+      <p class="didascalia">Foto 2 – Thiago</p>
+    </div>
+    <div class="foto">
+      <img src="img/foto3.jpg" alt="Foto 3" onclick="openModal(this.src)" />
+      <p class="didascalia">Foto 3 – Frammenti di vita</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="avviso">
+    ⚠️ Mostra vietata ai minori di 18 anni. Le immagini esposte contengono scene realistiche,
+    crude e ad alto impatto emotivo. Sconsigliata a persone particolarmente sensibili.
+  </footer>
+<!-- Modale immagine fullscreen -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+</div>
+<button id="scrollTopBtn" onclick="scrollToTop()">↑ Torna su</button>
+
+ <script src="script.js"></script>
+</body>
+</html>
+
+

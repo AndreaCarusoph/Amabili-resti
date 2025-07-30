@@ -1,0 +1,318 @@
+/* STRUTTURA BASE */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* MENU HAMBURGER */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background-color: #111;
+  padding-top: 60px;
+  transition: left 0.3s;
+  z-index: 999;
+}
+
+.menu.open {
+  left: 0;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 15px;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* SEZIONI */
+.sezione {
+  display: none;
+  padding: 20px;
+}
+
+.sezione.attiva {
+  display: block;
+}
+
+.sezione h2 {
+  color: crimson;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-image {
+  max-width: 90%;
+  height: auto;
+  border: 4px solid crimson;
+  box-shadow: 0 0 30px red;
+  border-radius: 10px;
+}
+
+.curatore {
+  margin-top: 10px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* SEZIONE MOSTRA */
+#sulla-mostra {
+  background-color: #1a1a1a;
+  color: #eee;
+  font-family: 'Georgia', serif;
+  padding: 30px;
+  border-left: 6px solid crimson;
+}
+
+#sulla-mostra h2 {
+  font-size: 2.2rem;
+  color: crimson;
+}
+
+/* SEZIONE DATE */
+#date {
+  background-color: #2b0000;
+  color: #fff8dc;
+  font-family: 'Trebuchet MS', sans-serif;
+  padding: 30px;
+  border-right: 6px solid gold;
+}
+
+#date h2 {
+  color: gold;
+  text-transform: uppercase;
+}
+
+#date ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#date li::before {
+  content: "📍 ";
+  color: gold;
+}
+
+/* SEZIONE CONTATTI */
+#contatti {
+  background-color: #000;
+  color: #eee;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 4px solid crimson;
+  border-bottom: 4px solid crimson;
+}
+
+#contatti h2 {
+  color: crimson;
+}
+
+#contatti form {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+}
+
+#contatti input,
+#contatti textarea {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #555;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+#contatti button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contatti button:hover {
+  background-color: #a30000;
+}
+
+/* MESSAGGIO GRAZIE */
+.popup-grazie {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: #111;
+  color: lightgreen;
+  border: 2px solid lightgreen;
+  border-radius: 10px;
+  padding: 20px 30px;
+  z-index: 9999;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.popup-grazie.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* GALLERIA */
+#galleria {
+  background-color: #111;
+  color: white;
+  padding: 30px;
+}
+
+.galleria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #111;
+}
+
+.galleria img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid crimson;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+  object-fit: cover;
+}
+
+.galleria img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* DIDASCALIE FOTO */
+.foto {
+  text-align: center;
+  max-width: 250px;
+}
+
+.didascalia {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+  font-style: italic;
+}
+
+/* MODALE IMMAGINE FULLSCREEN */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+/* BOTTONE TORNA SU */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #cc0033;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#scrollTopBtn:hover {
+  background-color: #a00028;
+}
+
+/* FOOTER */
+footer.avviso {
+  background-color: crimson;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+
+
+
+
+
