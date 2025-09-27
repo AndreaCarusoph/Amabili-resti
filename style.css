@@ -225,10 +225,22 @@ html {
   cursor: pointer;
   border: 3px solid crimson;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.8;
+  opacity: 1;
   object-fit: cover;
+  filter: none;
 }
 
+/* Specifica visibilità per foto 4–7 */
+img[src*="foto4"],
+img[src*="foto5"],
+img[src*="foto6"],
+img[src*="foto7"] {
+  opacity: 1 !important;
+  display: block !important;
+  filter: none !important;
+}
+
+/* Hover effetto universale */
 .galleria img:hover {
   transform: scale(1.05);
   opacity: 1;
@@ -314,6 +326,8 @@ footer.avviso {
   position: relative;
   z-index: 1;
 }
+
+
 
 
 
