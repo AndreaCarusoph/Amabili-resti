@@ -1,10 +1,11 @@
 /* STRUTTURA BASE */
 body {
-  margin: 0;
+  background: linear-gradient(to bottom, #000000, #1a1a1a);
   font-family: 'Segoe UI', sans-serif;
-  background-color: black;
   color: white;
+  margin: 0;
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -310,6 +311,7 @@ footer.avviso {
   position: relative;
   z-index: 1;
 }
+
 
 
 
