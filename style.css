@@ -299,17 +299,19 @@ html {
   background-color: #a00028;
 }
 
-/* FOOTER */
+/* Footer Avviso */
 footer.avviso {
-  background-color: crimson;
+  background-color: #d31245;
   color: white;
+  padding: 15px 25px;
+  font-size: 16px;
   text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
 }
+
+
 
 
 
