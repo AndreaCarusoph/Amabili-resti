@@ -1,282 +1,150 @@
 
-/* STRUTTURA BASE */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #111, #000);
-  color: #f0f0f0;
-  background-attachment: fixed;
-}
-
-html {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  color: #eee;
   scroll-behavior: smooth;
 }
 
-/* MENU HAMBURGER */
-.hamburger {
-  position: fixed;
-  top: 15px;
-  left: 20px;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 1000;
-  color: #fff;
-}
-
-/* MENU LATERALE */
-.menu {
-  position: fixed;
+.navbar {
+  background: #000;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
   top: 0;
-  left: -250px;
-  width: 220px;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
-  padding-top: 60px;
-  transition: left 0.3s ease;
-  z-index: 999;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.menu.open {
-  left: 0;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu ul li {
-  padding: 15px;
-  border-bottom: 1px solid #333;
-}
-
-.menu ul li a {
-  color: #eee;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.menu ul li a:hover {
-  color: crimson;
-}
-
-/* SEZIONI */
-.sezione {
-  display: none;
-  padding: 40px 20px;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.sezione.attiva {
-  display: block;
-  opacity: 1;
-}
-
-.sezione h2 {
-  color: crimson;
-  margin-bottom: 20px;
-  font-size: 2.2rem;
+  z-index: 1000;
   border-bottom: 2px solid crimson;
-  padding-bottom: 5px;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: crimson;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .hero-image {
-  max-width: 90%;
-  height: auto;
+  width: 90%;
+  max-width: 800px;
   border: 5px solid crimson;
-  box-shadow: 0 0 40px crimson;
-  border-radius: 12px;
+  box-shadow: 0 0 25px crimson;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
 }
 
 .curatore {
-  margin-top: 15px;
+  text-align: center;
   font-style: italic;
-  font-weight: bold;
-  color: #ccc;
-}
-
-/* SEZIONE DATE */
-#date {
-  background-color: #1b1b1b;
-  color: #fff8dc;
-  padding: 40px 20px;
-  border-left: 4px solid gold;
-}
-
-#date li::before {
-  content: "📍 ";
-  color: gold;
-}
-
-#date ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-/* SEZIONE CONTATTI */
-#contatti {
-  background-color: #0d0d0d;
-  padding: 40px 20px;
-  border-top: 2px solid crimson;
-  border-bottom: 2px solid crimson;
-}
-
-#contatti a {
-  color: #f5f5f5;
-  text-decoration: underline;
-}
-
-#contatti form {
-  background-color: #111;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  display: flex;
-  flex-direction: column;
-}
-
-#contatti input,
-#contatti textarea {
-  background-color: #222;
-  color: #eee;
-  border: 1px solid #555;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 4px;
-  margin-bottom: 15px;
-}
-
-#contatti button {
-  background-color: crimson;
-  color: white;
-  font-weight: bold;
-  padding: 12px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#contatti button:hover {
-  background-color: #a00028;
-}
-
-/* GALLERIA */
-#galleria {
-  background-color: #111;
-  padding: 40px 20px;
+  margin-top: 10px;
 }
 
 .galleria {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  gap: 25px;
 }
 
 .foto {
-  max-width: 250px;
+  max-width: 220px;
   text-align: center;
 }
 
 .foto img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 3px solid crimson;
-  opacity: 0.85;
-  transition: transform 0.3s, opacity 0.3s;
-  cursor: pointer;
-  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .foto img:hover {
   transform: scale(1.05);
-  opacity: 1;
 }
 
-.didascalia {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #ccc;
-  font-style: italic;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-/* MODALE */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 80px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.95);
+form input, form textarea {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background: #222;
+  color: white;
 }
 
-.modal-content {
-  display: block;
-  margin: auto;
-  max-width: 90%;
-  max-height: 80vh;
-}
-
-.close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  color: #fff;
-  font-size: 40px;
+form button {
+  padding: 10px;
+  background: crimson;
+  border: none;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
 }
 
-.close:hover {
-  color: #ccc;
+form button:hover {
+  background: #a30000;
 }
 
-/* BOTTONE SCROLL SU */
-#scrollTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 10px 15px;
-  font-size: 16px;
-  background-color: crimson;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  z-index: 1000;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-#scrollTopBtn:hover {
-  background-color: #a00028;
-}
-
-/* FOOTER */
 footer.avviso {
-  background-color: #d31245;
+  background: #d31245;
   color: white;
-  padding: 20px;
   text-align: center;
-  font-size: 16px;
-  line-height: 1.6;
-  position: relative;
+  padding: 20px;
+  font-size: 15px;
 }
+
+/* Transizioni */
+.fade { animation: fadeIn 1s ease-in; }
+.slide-left { animation: slideLeft 1s ease-in; }
+.slide-right { animation: slideRight 1s ease-in; }
+.zoom { animation: zoomIn 1s ease-in; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 
 
 
