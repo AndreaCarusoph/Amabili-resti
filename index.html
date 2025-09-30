@@ -2,84 +2,84 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amabili Resti – Mostra Fotografica</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amabili Resti — Mostra Fotografica</title>
+  <meta name="description" content="“Amabili Resti – Il grido di chi non ce l’ha fatta”: mostra fotografica intensa e cruda contro il femminicidio." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Amabili Resti</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#sulla-mostra">Sulla mostra</a></li>
-        <li><a href="#date">Date</a></li>
-        <li><a href="#galleria">Galleria</a></li>
-        <li><a href="#contatti">Contatti</a></li>
+  <!-- Menu / Navbar -->
+  <header class="header">
+    <div class="logo">Amabili Resti</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="sulla-mostra">Sulla mostra</a></li>
+        <li><a href="#" data-target="galleria">Galleria</a></li>
+        <li><a href="#" data-target="contatti">Contatti</a></li>
       </ul>
     </nav>
+    <button class="nav-toggle">☰</button>
   </header>
 
-  <section id="home" class="section fade">
+  <!-- Sezioni -->
+  <section id="home" class="section section-home active">
     <div class="hero">
-      <img src="img/coming-soon.jpg" alt="Coming Soon" class="hero-image">
+      <img src="img/coming-soon.jpg" alt="Coming Soon" class="hero-img" />
       <p class="curatore">A cura di Andrea Caruso</p>
     </div>
   </section>
 
-  <section id="sulla-mostra" class="section slide-left">
-    <h2>Sulla mostra</h2>
-    <p><strong>“Amabili Resti – Il grido di chi non ce l’ha fatta”</strong> è molto più di una mostra fotografica: è un atto di denuncia, un memoriale visivo, una richiesta silenziosa di ascolto e consapevolezza.</p>
-    <p>Dieci fotografie raccontano dieci storie. Storie vere, spezzate, dimenticate, ignorate...</p>
-  </section>
-
-  <section id="date" class="section slide-right">
-    <h2>Date</h2>
-    <ul>
-      <li><strong>Oppeano (VR)</strong> – 10/2025</li>
-      <li><strong>Isola Rizza (VR)</strong> – 11/2025</li>
-      <li><strong>Verona</strong> – 11/2025</li>
-      <li><strong>Palermo</strong> – 12/2025</li>
-    </ul>
-  </section>
-
-  <section id="galleria" class="section zoom">
-    <h2>Galleria Fotografica</h2>
-    <div class="galleria">
-      <div class="foto"><img src="img/foto1.jpg" alt="Foto 1"><p>Foto 1 – Esplode il silenzio</p></div>
-      <div class="foto"><img src="img/foto2.jpg" alt="Foto 2"><p>Foto 2 – Thiago</p></div>
-      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3"><p>Foto 3 – Frammenti di vita</p></div>
-      <div class="foto"><img src="img/foto4.jpg" alt="Foto 4"><p>Foto 4 – Terra crudele</p></div>
-      <div class="foto"><img src="img/foto5.jpg" alt="Foto 5"><p>Foto 5 – Caduta a pezzi</p></div>
-      <div class="foto"><img src="img/foto6.jpg" alt="Foto 6"><p>Foto 6 – L’ultimo silenzio</p></div>
-      <div class="foto"><img src="img/foto7.jpg" alt="Foto 7"><p>Foto 7 – Quel che rimane</p></div>
-      <div class="foto"><img src="img/foto8.jpg" alt="Foto 8"><p>Foto 8 – Titolo da definire</p></div>
-      <div class="foto"><img src="img/foto9.jpg" alt="Foto 9"><p>Foto 9 – Titolo da definire</p></div>
-      <div class="foto"><img src="img/foto10.jpg" alt="Foto 10"><p>Foto 10 – Titolo da definire</p></div>
+  <section id="sulla-mostra" class="section section-mostra">
+    <div class="content">
+      <h2>Sulla mostra</h2>
+      <p><strong>“Amabili Resti – Il grido di chi non ce l’ha fatta”</strong> è molto più di una mostra fotografica: è un atto di denuncia, un memoriale visivo, una richiesta di ascolto e consapevolezza.</p>
+      <p>Dieci fotografie raccontano dieci storie. Storie vere, spezzate, dimenticate, ignorate. Non troverai immagini rassicuranti: qui ci sono corpi stesi, silenzi pesanti, oggetti dispersi e quel sangue che molti vorrebbero cancellare.</p>
     </div>
   </section>
 
-  <section id="contatti" class="section fade">
-    <h2>Contatti</h2>
-    <form action="https://formspree.io/f/mwkgyovz" method="POST">
-      <input type="text" name="nome" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="messaggio" rows="5" placeholder="Messaggio" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
+  <section id="galleria" class="section section-galleria">
+    <div class="content">
+      <h2>Galleria Fotografica</h2>
+      <div class="grid">
+        <div class="foto"><img src="img/foto1.jpg" alt="Foto 1" /><p>Foto 1 – Esplode il silenzio</p></div>
+        <div class="foto"><img src="img/foto2.jpg" alt="Foto 2" /><p>Foto 2 – Thiago</p></div>
+        <div class="foto"><img src="img/foto3.jpg" alt="Foto 3" /><p>Foto 3 – Frammenti di vita</p></div>
+        <div class="foto"><img src="img/foto4.jpg" alt="Foto 4" /><p>Foto 4 – Terra crudele</p></div>
+        <div class="foto"><img src="img/foto5.jpg" alt="Foto 5" /><p>Foto 5 – Caduta a pezzi</p></div>
+        <div class="foto"><img src="img/foto6.jpg" alt="Foto 6" /><p>Foto 6 – L’ultimo silenzio</p></div>
+        <div class="foto"><img src="img/foto7.jpg" alt="Foto 7" /><p>Foto 7 – Quel che rimane</p></div>
+        <div class="foto"><img src="img/foto8.jpg" alt="Foto 8" /><p>Foto 8 – Titolo da definire</p></div>
+        <div class="foto"><img src="img/foto9.jpg" alt="Foto 9" /><p>Foto 9 – Titolo da definire</p></div>
+        <div class="foto"><img src="img/foto10.jpg" alt="Foto 10" /><p>Foto 10 – Titolo da definire</p></div>
+      </div>
+    </div>
   </section>
 
-  <footer class="avviso">
+  <section id="contatti" class="section section-contatti">
+    <div class="content">
+      <h2>Contatti</h2>
+      <p>Email: <a href="mailto:info@andreacaruso.art">info@andreacaruso.art</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/andrea_caruso_photography" target="_blank">@andrea_caruso_photography</a></p>
+      <p>Telefono: 388 726 2828</p>
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="nome" placeholder="Nome" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="messaggio" rows="5" placeholder="Messaggio" required></textarea>
+        <button type="submit">Invia</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
     ⚠️ Mostra vietata ai minori di 18 anni. Le immagini esposte contengono scene realistiche, crude e ad alto impatto emotivo.
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
