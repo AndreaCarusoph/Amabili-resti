@@ -1,149 +1,209 @@
 
-body {
+/* Reset basico */
+* {
   margin: 0;
-  font-family: 'Playfair Display', serif;
-  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #0a0a0a;
   color: #eee;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-.navbar {
-  background: #000;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
+/* Header / Navbar */
+.header {
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
   border-bottom: 2px solid crimson;
-}
-
-.nav-links {
-  list-style: none;
+  z-index: 1000;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
 }
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
+.logo {
+  font-size: 1.6rem;
   font-weight: bold;
-  transition: color 0.3s ease;
+  color: white;
 }
 
-.nav-links li a:hover {
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.nav ul li a:hover {
   color: crimson;
 }
 
-.section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
+/* Toggle menu per mobile */
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.hero-image {
-  width: 90%;
-  max-width: 800px;
-  border: 5px solid crimson;
-  box-shadow: 0 0 25px crimson;
-  border-radius: 10px;
-  display: block;
-  margin: auto;
+/* Sezioni */
+.section {
+  min-height: 100vh;
+  padding: 120px 30px 60px; /* lascia spazio per barra fissa */
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.section.active {
+  opacity: 1;
+}
+
+/* Home / Hero */
+.section-home .hero {
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 90%;
+  border: 4px solid crimson;
+  border-radius: 8px;
+  box-shadow: 0 0 30px crimson;
 }
 
 .curatore {
-  text-align: center;
+  margin-top: 20px;
   font-style: italic;
-  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
-.galleria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+/* Sulla mostra */
+.section-mostra .content {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Galleria */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
 }
 
 .foto {
-  max-width: 220px;
-  text-align: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .foto img {
+  display: block;
   width: 100%;
-  border-radius: 8px;
-  border: 3px solid crimson;
-  transition: transform 0.3s ease;
+  border-radius: 6px;
+  transition: transform 0.4s, filter 0.4s;
+  filter: blur(8px);
 }
 
 .foto img:hover {
   transform: scale(1.05);
+  filter: blur(0px);
 }
 
-form {
+/* Didascalia */
+.foto p {
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Contatti */
+.section-contatti .content {
+  max-width: 500px;
+  margin: auto;
+}
+
+.section-contatti form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  background-color: #111;
-  padding: 20px;
-  border-radius: 8px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-form input, form textarea {
-  padding: 10px;
-  border-radius: 4px;
+.section-contatti input,
+.section-contatti textarea {
+  padding: 12px;
   border: none;
-  background: #222;
+  border-radius: 4px;
+  background-color: #222;
   color: white;
 }
 
-form button {
-  padding: 10px;
-  background: crimson;
+.section-contatti button {
+  padding: 14px;
+  background-color: crimson;
+  color: white;
   border: none;
   border-radius: 5px;
-  font-weight: bold;
+  font-size: 1.1rem;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-form button:hover {
-  background: #a30000;
+.section-contatti button:hover {
+  background-color: #900;
 }
 
-footer.avviso {
-  background: #d31245;
-  color: white;
+/* Footer */
+.footer {
+  background-color: #111;
+  color: #ccc;
   text-align: center;
-  padding: 20px;
-  font-size: 15px;
+  padding: 30px 20px;
+  font-size: 0.95rem;
 }
 
-/* Transizioni */
-.fade { animation: fadeIn 1s ease-in; }
-.slide-left { animation: slideLeft 1s ease-in; }
-.slide-right { animation: slideRight 1s ease-in; }
-.zoom { animation: zoomIn 1s ease-in; }
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Media query per mobile */
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.95);
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .nav.open ul {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
 }
 
-@keyframes slideLeft {
-  from { transform: translateX(-100px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideRight {
-  from { transform: translateX(100px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
 
 
 
