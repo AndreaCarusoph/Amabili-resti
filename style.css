@@ -291,46 +291,29 @@ footer {
 .contact-form button:hover {
   background-color: #a30000;
 }
-.hero-video-wrapper {
-  display: flex;
-  justify-content: center;   /* centra il video */
-  align-items: center;
-  margin: 100px auto 30px;   /* margine sopra per distaccarlo dal menu */
-  width: 100%;
-}
-
-.hero-video {
-  width: 100%;
-  max-width: 700px;          /* limita la larghezza massima */
-  height: auto;
-  border: 4px solid crimson;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(220, 20, 60, 0.5);
-  object-fit: cover;
-}
-/* Fix centratura e dimensione video Home */
+/* HERO - Video Home */
 #home .hero-video-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 90px auto 24px;
-  max-width: 960px;      /* limite al contenitore */
-  padding: 0 16px;       /* respiro ai lati */
+  margin: 100px auto 30px;   /* margine sopra per distaccarlo dal menu */
+  max-width: 960px;          /* contenitore centrato */
+  padding: 0 16px;           /* spazi ai lati per non attaccarlo */
 }
 
 #home .hero-video {
   display: block;
   width: 100%;
-  max-width: 680px;      /* dimensione massima del video */
+  max-width: 680px;          /* larghezza massima video */
   height: auto;
   border: 4px solid crimson;
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(220, 20, 60, 0.5);
   object-fit: cover;
-  margin: 0 auto;        /* centratura ulteriore sull’elemento */
+  margin: 0 auto;            /* centratura ulteriore */
 }
 
-/* evita scroll orizzontale che può far sembrare il contenuto “spostato” */
+/* evita scroll orizzontale */
 html, body { overflow-x: hidden; }
 
 /* Responsive */
@@ -338,6 +321,8 @@ html, body { overflow-x: hidden; }
   #home .hero-video-wrapper { margin: 80px auto 16px; }
   #home .hero-video { max-width: 95vw; }
 }
+
+
 
 
 
