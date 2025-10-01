@@ -3,251 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amabili Resti – Mostra Fotografica</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0c0c0c;
-      color: #f5f5f5;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #1a1a1a;
-      padding: 20px 30px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 2px solid crimson;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      color: crimson;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: crimson;
-    }
-
-    section {
-      display: none;
-      padding: 60px 30px;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-
-    section.attiva {
-      display: block;
-      opacity: 1;
-    }
-
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 20px;
-      color: crimson;
-    }
-
-    .hero-image {
-      width: 100%;
-      max-height: 600px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      border: 4px solid crimson;
-    }
-
-    .galleria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .foto {
-      max-width: 250px;
-      text-align: center;
-    }
-
-    .foto img {
-      width: 100%;
-      border-radius: 8px;
-      border: 2px solid crimson;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      opacity: 0.9;
-    }
-
-    .foto img:hover {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-
-    .didascalia {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 8px;
-      font-style: italic;
-    }
-
-    /* Modale immagine fullscreen */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.95);
-    }
-
-    .modal-content {
-      display: block;
-      margin: 50px auto;
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 8px;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #1a1a1a;
-      color: crimson;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-      border-top: 2px solid crimson;
-    }
-
-    a {
-      color: crimson;
-    }
-
-  </style>
+  <title>Amabili Resti – Mostra Fotografica di Andrea Caruso</title>
+  <meta name="description" content="Mostra fotografica sul femminicidio a cura di Andrea Caruso. Immagini crude e vere che denunciano il silenzio.">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
+  <!-- NAV -->
   <header>
     <div class="logo">Amabili Resti</div>
     <nav>
-      <a href="#" onclick="mostraSezione('home')">Home</a>
-      <a href="#" onclick="mostraSezione('mostra')">Sulla Mostra</a>
-      <a href="#" onclick="mostraSezione('galleria')">Galleria</a>
-      <a href="#" onclick="mostraSezione('contatti')">Contatti</a>
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('mostra')">Sulla mostra</a></li>
+        <li><a href="#" onclick="showSection('galleria')">Galleria</a></li>
+        <li><a href="#" onclick="showSection('contatti')">Contatti</a></li>
+      </ul>
     </nav>
   </header>
 
   <!-- HOME -->
-  <section id="home" class="attiva">
-    <img src="img/coming-soon.jpg" alt="Coming Soon" class="hero-image">
-    <p style="text-align:center; font-style: italic;">A cura di Andrea Caruso</p>
+  <section id="home" class="sezione attiva">
+    <div class="hero">
+      <h1>Amabili Resti – Il grido di chi non ce l’ha fatta</h1>
+      <img src="img/coming-soon.jpg" alt="Coming Soon" />
+      <p class="curatore">A cura di Andrea Caruso</p>
+    </div>
   </section>
 
   <!-- SULLA MOSTRA -->
-  <section id="mostra">
-    <h2>Sulla Mostra</h2>
+  <section id="mostra" class="sezione">
+    <h2>Sulla mostra</h2>
     <p><strong>“Amabili Resti – Il grido di chi non ce l’ha fatta”</strong> è molto più di una mostra fotografica: è un atto di denuncia, un memoriale visivo, una richiesta silenziosa di ascolto e consapevolezza.</p>
     <p>Dieci fotografie raccontano dieci storie. Storie vere, spezzate, dimenticate, ignorate. Non troverai immagini rassicuranti, né bellezza accomodante: qui ci sono corpi stesi, silenzi pesanti, oggetti sparsi in stanze vuote, e quel sangue che nessuno vuole più vedere.</p>
-    <p>Le scene sono ricostruite con rispetto, ma senza filtri. Le immagini vogliono ferire il torpore dell’indifferenza, disturbare il privilegio di chi può voltarsi dall’altra parte.</p>
+    <p>Perché il femminicidio è un fatto culturale, strutturale, sistemico. E continua a succedere ogni giorno.</p>
   </section>
 
   <!-- GALLERIA -->
-  <section id="galleria">
+  <section id="galleria" class="sezione">
     <h2>Galleria Fotografica</h2>
     <div class="galleria">
-      <div class="foto"><img src="img/foto1.jpg" alt="Foto 1" onclick="apriModale(this.src)"><p class="didascalia">Foto 1 – Esplode il silenzio</p></div>
-      <div class="foto"><img src="img/foto2.jpg" alt="Foto 2" onclick="apriModale(this.src)"><p class="didascalia">Foto 2 – Thiago</p></div>
-      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)"><p class="didascalia">Foto 3 – Frammenti di vita</p></div>
-      <div class="foto"><img src="img/foto4.jpg" alt="Foto 4" onclick="apriModale(this.src)"><p class="didascalia">Foto 4 – Terra crudele</p></div>
-      <div class="foto"><img src="img/foto5.jpg" alt="Foto 5" onclick="apriModale(this.src)"><p class="didascalia">Foto 5 – Caduta a pezzi</p></div>
-      <div class="foto"><img src="img/foto6.jpg" alt="Foto 6" onclick="apriModale(this.src)"><p class="didascalia">Foto 6 – L’ultimo silenzio</p></div>
-      <div class="foto"><img src="img/foto7.jpg" alt="Foto 7" onclick="apriModale(this.src)"><p class="didascalia">Foto 7 – Quel che rimane</p></div>
-      <div class="foto"><img src="img/foto8.jpg" alt="Foto 8" onclick="apriModale(this.src)"><p class="didascalia">Foto 8 – Titolo da definire</p></div>
-      <div class="foto"><img src="img/foto9.jpg" alt="Foto 9" onclick="apriModale(this.src)"><p class="didascalia">Foto 9 – Titolo da definire</p></div>
-      <div class="foto"><img src="img/foto10.jpg" alt="Foto 10" onclick="apriModale(this.src)"><p class="didascalia">Foto 10 – Titolo da definire</p></div>
+      <!-- Sostituisci i titoli a piacere -->
+      <div class="foto"><img src="img/foto1.jpg" onclick="openModal(this.src)"><p>Foto 1 – Esplode il silenzio</p></div>
+      <div class="foto"><img src="img/foto2.jpg" onclick="openModal(this.src)"><p>Foto 2 – Thiago</p></div>
+      <div class="foto"><img src="img/foto3.jpg" onclick="openModal(this.src)"><p>Foto 3 – Frammenti di vita</p></div>
+      <div class="foto"><img src="img/foto4.jpg" onclick="openModal(this.src)"><p>Foto 4 – Terra crudele</p></div>
+      <div class="foto"><img src="img/foto5.jpg" onclick="openModal(this.src)"><p>Foto 5 – Caduta a pezzi</p></div>
+      <div class="foto"><img src="img/foto6.jpg" onclick="openModal(this.src)"><p>Foto 6 – L’ultimo silenzio</p></div>
+      <div class="foto"><img src="img/foto7.jpg" onclick="openModal(this.src)"><p>Foto 7 – Quel che rimane</p></div>
+      <div class="foto"><img src="img/foto8.jpg" onclick="openModal(this.src)"><p>Foto 8 – Titolo da definire</p></div>
+      <div class="foto"><img src="img/foto9.jpg" onclick="openModal(this.src)"><p>Foto 9 – Titolo da definire</p></div>
+      <div class="foto"><img src="img/foto10.jpg" onclick="openModal(this.src)"><p>Foto 10 – Titolo da definire</p></div>
     </div>
   </section>
 
   <!-- CONTATTI -->
-  <section id="contatti">
+  <section id="contatti" class="sezione">
     <h2>Contatti</h2>
     <p>Email: <a href="mailto:info@andreacaruso.art">info@andreacaruso.art</a></p>
     <p>Instagram: <a href="https://www.instagram.com/andrea_caruso_photography" target="_blank">@andrea_caruso_photography</a></p>
     <p>Telefono: 388 726 2828</p>
-
-    <form action="https://formspree.io/f/yourformid" method="POST">
-      <input type="text" name="nome" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
+    <form action="https://formspree.io/f/mnqeyrky" method="POST">
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
       <textarea name="messaggio" rows="5" placeholder="Messaggio" required></textarea>
       <button type="submit">Invia</button>
     </form>
   </section>
 
-  <!-- MODALE -->
-  <div id="modal" class="modal" onclick="chiudiModale()">
+  <!-- MODAL -->
+  <div id="modal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
-    <img class="modal-content" id="imgModale">
+    <img class="modal-content" id="modalImg" />
   </div>
 
-  <!-- FOOTER -->
+  <!-- AVVISO -->
   <footer>
-    ⚠️ Mostra sconsigiata ai minori di 18 anni. Le immagini esposte contengono scene realistiche, crude e ad alto impatto emotivo.
+    <p>⚠️ Mostra sconsigliata ai minori di 18 anni. Le immagini esposte contengono scene realistiche e ad alto impatto emotivo.</p>
   </footer>
 
-  <!-- SCRIPT -->
-  <script>
-    const sezioni = document.querySelectorAll("section");
-    function mostraSezione(id) {
-      sezioni.forEach(sec => {
-        if (sec.id === id) {
-          sec.classList.add("attiva");
-        } else {
-          sec.classList.remove("attiva");
-        }
-      });
-    }
-
-    function apriModale(src) {
-      document.getElementById("modal").style.display = "block";
-      document.getElementById("imgModale").src = src;
-    }
-
-    function chiudiModale() {
-      document.getElementById("modal").style.display = "none";
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
