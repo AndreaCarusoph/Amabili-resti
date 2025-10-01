@@ -102,16 +102,17 @@ nav ul li a:hover::after {
 }
 
 .hero-video {
-  width: 80%;
-  max-width: 900px;
+  width: 60%;
+  max-width: 720px;
   height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 40px auto 20px;
-  border: 4px solid crimson;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
   display: block;
+  margin: 60px auto 30px;
+  border: 4px solid crimson;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  object-fit: cover;
 }
+
 
 
 .curatore {
@@ -304,6 +305,7 @@ footer {
 .contact-form button:hover {
   background-color: #a30000;
 }
+
 
 
 
