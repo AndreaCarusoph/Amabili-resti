@@ -1,102 +1,153 @@
-/* Import font eleganti */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap');
-
-/* Reset base */
+/* BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #0c0c0c;
-  color: #f5f5f5;
+html {
   scroll-behavior: smooth;
 }
 
-/* Header e nav */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* HEADER */
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1a1a1a;
-  padding: 20px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 2px solid crimson;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
 }
 
 .logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  color: crimson;
-}
-
-nav a {
-  color: white;
-  margin-left: 25px;
-  text-decoration: none;
+  font-size: 20px;
   font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
   color: crimson;
+  letter-spacing: 1px;
 }
 
-/* Sezioni */
-section {
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: crimson;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* SEZIONI */
+.sezione {
   display: none;
-  padding: 60px 30px;
-  max-width: 1000px;
-  margin: auto;
+  padding: 100px 30px 50px;
+  min-height: 100vh;
   opacity: 0;
   transition: opacity 0.6s ease;
 }
 
-section.attiva {
+.sezione.attiva {
   display: block;
   opacity: 1;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
+/* HERO */
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
   color: crimson;
+  margin-bottom: 20px;
 }
 
-/* Hero */
-.hero-image {
+.hero img {
   width: 100%;
-  max-height: 600px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  max-width: 1000px;
   border: 4px solid crimson;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
 }
 
-/* Galleria */
+.curatore {
+  margin-top: 15px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* SULLA MOSTRA */
+#mostra h2 {
+  color: crimson;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#mostra p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* GALLERIA */
+#galleria h2 {
+  color: crimson;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .galleria {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .foto {
-  max-width: 250px;
+  width: 250px;
   text-align: center;
 }
 
 .foto img {
   width: 100%;
+  height: auto;
+  border: 3px solid crimson;
   border-radius: 8px;
-  border: 2px solid crimson;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.85;
+  object-fit: cover;
 }
 
 .foto img:hover {
@@ -104,14 +155,59 @@ h1, h2 {
   opacity: 1;
 }
 
-.didascalia {
+.foto p {
+  margin-top: 10px;
+  font-style: italic;
   font-size: 14px;
   color: #ccc;
-  margin-top: 8px;
-  font-style: italic;
 }
 
-/* Modale immagine */
+/* CONTATTI */
+#contatti h2 {
+  color: crimson;
+  margin-bottom: 20px;
+}
+
+#contatti p,
+#contatti a {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+form {
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #222;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #a30000;
+}
+
+/* MODALE IMMAGINI */
 .modal {
   display: none;
   position: fixed;
@@ -126,16 +222,15 @@ h1, h2 {
 
 .modal-content {
   display: block;
-  margin: 50px auto;
+  margin: auto;
   max-width: 90%;
   max-height: 80vh;
-  border-radius: 8px;
 }
 
 .close {
   position: absolute;
   top: 20px;
-  right: 35px;
+  right: 40px;
   color: #fff;
   font-size: 40px;
   font-weight: bold;
@@ -143,74 +238,15 @@ h1, h2 {
 }
 
 .close:hover {
-  color: crimson;
+  color: #aaa;
 }
 
-/* Form contatti */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-form input,
-form textarea {
-  background-color: #1a1a1a;
-  color: #eee;
-  border: 1px solid #444;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-form button {
-  background-color: crimson;
-  color: white;
-  border: none;
-  padding: 12px;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-form button:hover {
-  background-color: #a00028;
-}
-
-/* Footer */
+/* FOOTER */
 footer {
+  background-color: #d31245;
+  color: white;
   text-align: center;
-  background-color: #1a1a1a;
-  color: crimson;
   padding: 20px;
-  margin-top: 40px;
-  font-size: 14px;
-  border-top: 2px solid crimson;
+  font-size: 15px;
+  margin-top: 50px;
 }
-
-a {
-  color: crimson;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
