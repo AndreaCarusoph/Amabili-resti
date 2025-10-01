@@ -229,37 +229,40 @@
 
   <!-- FOOTER -->
   <footer>
-    ⚠️ Mostra vietata ai minori di 18 anni. Le immagini esposte contengono scene realistiche, crude e ad alto impatto emotivo.
+    ⚠️ Mostra sconsigliata ai minori di 18 anni. Le immagini esposte contengono scene realistiche, crude e ad alto impatto emotivo.
   </footer>
 
   <!-- SCRIPT -->
   <script>
-    const sezioni = document.querySelectorAll("section");
+    const sezioni = document.querySelectorAll(".sezione");
+
     function mostraSezione(id) {
       sezioni.forEach(sec => {
-        if (sec.id === id) {
-          sec.classList.add("attiva");
-        } else {
-          sec.classList.remove("attiva");
-        }
+        sec.classList.remove("attiva");
       });
+      const attiva = document.getElementById(id);
+      if (attiva) attiva.classList.add("attiva");
     }
 
     function apriModale(src) {
-      document.getElementById("modal").style.display = "block";
-      document.getElementById("imgModale").src = src;
+      const modal = document.getElementById("modal");
+      const img = document.getElementById("imgModale");
+      modal.style.display = "block";
+      img.src = src;
     }
 
     function chiudiModale() {
-      document.getElementById("modal").style.display = "none";
+      const modal = document.getElementById("modal");
+      modal.style.display = "none";
     }
+
+    // Chiudi modale con ESC
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        chiudiModale();
+      }
+    });
   </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
