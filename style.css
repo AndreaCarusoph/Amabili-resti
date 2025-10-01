@@ -293,21 +293,22 @@ footer {
 }
 .hero-video-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: center;   /* centra il video */
   align-items: center;
-  margin: 60px auto 20px; /* margini ridotti e centrati */
-  max-width: 900px; /* limita la larghezza massima del contenitore */
+  margin: 100px auto 30px;   /* margine sopra per distaccarlo dal menu */
+  width: 100%;
 }
 
 .hero-video {
   width: 100%;
-  max-width: 600px; /* video più contenuto */
+  max-width: 700px;          /* limita la larghezza massima */
   height: auto;
   border: 4px solid crimson;
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(220, 20, 60, 0.5);
   object-fit: cover;
 }
+
 
 
 
