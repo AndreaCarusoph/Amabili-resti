@@ -49,7 +49,7 @@
       color: crimson;
     }
 
-    section {
+    .sezione {
       display: none;
       padding: 60px 30px;
       max-width: 1000px;
@@ -58,7 +58,7 @@
       transition: opacity 0.6s ease;
     }
 
-    section.attiva {
+    .sezione.attiva {
       display: block;
       opacity: 1;
     }
@@ -111,6 +111,48 @@
       font-style: italic;
     }
 
+    /* Form Contatti */
+    .contact-form {
+      max-width: 600px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form label {
+      color: #f5f5f5;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      background-color: #222;
+      border: 1px solid #555;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      width: 120px;
+      align-self: flex-end;
+      padding: 10px;
+      background-color: crimson;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #a30000;
+    }
+
     /* Modale immagine fullscreen */
     .modal {
       display: none;
@@ -155,7 +197,6 @@
     a {
       color: crimson;
     }
-
   </style>
 </head>
 <body>
@@ -171,13 +212,13 @@
   </header>
 
   <!-- HOME -->
-  <section id="home" class="attiva">
+  <section id="home" class="sezione attiva">
     <img src="img/coming-soon.jpg" alt="Coming Soon" class="hero-image">
     <p style="text-align:center; font-style: italic;">A cura di Andrea Caruso</p>
   </section>
 
   <!-- SULLA MOSTRA -->
-  <section id="mostra">
+  <section id="mostra" class="sezione">
     <h2>Sulla Mostra</h2>
     <p><strong>“Amabili Resti – Il grido di chi non ce l’ha fatta”</strong> è molto più di una mostra fotografica: è un atto di denuncia, un memoriale visivo, una richiesta silenziosa di ascolto e consapevolezza.</p>
     <p>Dieci fotografie raccontano dieci storie. Storie vere, spezzate, dimenticate, ignorate. Non troverai immagini rassicuranti, né bellezza accomodante: qui ci sono corpi stesi, silenzi pesanti, oggetti sparsi in stanze vuote, e quel sangue che nessuno vuole più vedere.</p>
@@ -185,41 +226,36 @@
   </section>
 
   <!-- GALLERIA -->
-  <section id="galleria">
+  <section id="galleria" class="sezione">
     <h2>Galleria Fotografica</h2>
     <div class="galleria">
+      <!-- Aggiungi le tue immagini -->
       <div class="foto"><img src="img/foto1.jpg" alt="Foto 1" onclick="apriModale(this.src)"><p class="didascalia">Foto 1 – Esplode il silenzio</p></div>
       <div class="foto"><img src="img/foto2.jpg" alt="Foto 2" onclick="apriModale(this.src)"><p class="didascalia">Foto 2 – Thiago</p></div>
-      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)"><p class="didascalia">Foto 3 – Frammenti di vita</p></div>
-      <div class="foto"><img src="img/foto4.jpg" alt="Foto 4" onclick="apriModale(this.src)"><p class="didascalia">Foto 4 – Terra crudele</p></div>
-      <div class="foto"><img src="img/foto5.jpg" alt="Foto 5" onclick="apriModale(this.src)"><p class="didascalia">Foto 5 – Caduta a pezzi</p></div>
-      <div class="foto"><img src="img/foto6.jpg" alt="Foto 6" onclick="apriModale(this.src)"><p class="didascalia">Foto 6 – L’ultimo silenzio</p></div>
-      <div class="foto"><img src="img/foto7.jpg" alt="Foto 7" onclick="apriModale(this.src)"><p class="didascalia">Foto 7 – Quel che rimane</p></div>
-      <div class="foto"><img src="img/foto8.jpg" alt="Foto 8" onclick="apriModale(this.src)"><p class="didascalia">Foto 8 – Titolo da definire</p></div>
-      <div class="foto"><img src="img/foto9.jpg" alt="Foto 9" onclick="apriModale(this.src)"><p class="didascalia">Foto 9 – Titolo da definire</p></div>
-      <div class="foto"><img src="img/foto10.jpg" alt="Foto 10" onclick="apriModale(this.src)"><p class="didascalia">Foto 10 – Titolo da definire</p></div>
+      <!-- Altre foto... -->
     </div>
   </section>
 
-<section id="contatti" class="sezione">
-  <h2>Contatti</h2>
-  <p>Email: <a href="mailto:info@andreacaruso.art">info@andreacaruso.art</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/andrea_caruso_photography" target="_blank">@andrea_caruso_photography</a></p>
-  <p>Telefono: 388 726 2828</p>
+  <!-- CONTATTI -->
+  <section id="contatti" class="sezione">
+    <h2>Contatti</h2>
+    <p>Email: <a href="mailto:info@andreacaruso.art">info@andreacaruso.art</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/andrea_caruso_photography" target="_blank">@andrea_caruso_photography</a></p>
+    <p>Telefono: 388 726 2828</p>
 
-  <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" name="nome" required>
+    <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="messaggio">Messaggio</label>
-    <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+      <label for="messaggio">Messaggio</label>
+      <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
 
-    <button type="submit">Invia</button>
-  </form>
-</section>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
 
   <!-- MODALE -->
   <div id="modal" class="modal" onclick="chiudiModale()">
@@ -237,32 +273,21 @@
     const sezioni = document.querySelectorAll(".sezione");
 
     function mostraSezione(id) {
-      sezioni.forEach(sec => {
-        sec.classList.remove("attiva");
-      });
+      sezioni.forEach(sec => sec.classList.remove("attiva"));
       const attiva = document.getElementById(id);
       if (attiva) attiva.classList.add("attiva");
     }
 
     function apriModale(src) {
-      const modal = document.getElementById("modal");
-      const img = document.getElementById("imgModale");
-      modal.style.display = "block";
-      img.src = src;
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("imgModale").src = src;
     }
 
     function chiudiModale() {
-      const modal = document.getElementById("modal");
-      modal.style.display = "none";
+      document.getElementById("modal").style.display = "none";
     }
-
-    // Chiudi modale con ESC
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        chiudiModale();
-      }
-    });
   </script>
 
 </body>
 </html>
+
