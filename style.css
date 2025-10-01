@@ -100,10 +100,9 @@ nav ul li a:hover::after {
   border-radius: 8px;
   box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
 }
-
 .hero-video {
   width: 100%;
-  max-width: 500px;
+  max-width: 300px; /* prima era 500px */
   height: auto;
   display: block;
   margin: 40px auto 20px;
@@ -306,6 +305,7 @@ footer {
 .contact-form button:hover {
   background-color: #a30000;
 }
+
 
 
 
