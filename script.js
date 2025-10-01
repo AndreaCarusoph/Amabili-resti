@@ -1,62 +1,58 @@
-// SCROLL SUAVIZZATO AI LINK DEL MENU
-document.querySelectorAll('.topnav a').forEach(link => {
-  link.addEventListener('click', e => {
+// Gestione navigazione tra sezioni
+const navLinks = document.querySelectorAll("nav ul li a");
+const sezioni = document.querySelectorAll(".sezione");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
-    const targetId = link.getAttribute('href').slice(1);
-    const section = document.getElementById(targetId);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 60,
-        behavior: 'smooth'
-      });
-    }
+    const targetId = this.getAttribute("data-target");
+
+    sezioni.forEach(sezione => {
+      if (sezione.id === targetId) {
+        sezione.classList.add("attiva");
+        sezione.scrollIntoView({ behavior: "smooth" });
+      } else {
+        sezione.classList.remove("attiva");
+      }
+    });
+
+    // Aggiorna URL senza ricaricare
+    history.pushState(null, "", `#${targetId}`);
   });
 });
 
-// ANIMAZIONE SCROLL SU TUTTE LE SEZIONI
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+// MODALE per immagini fullscreen
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+
+function openModal(src) {
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Chiudi modale al click fuori
+modal.addEventListener("click", function () {
+  closeModal();
+});
+
+// Scroll to top button
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+};
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
-}, {
-  threshold: 0.1
-});
-
-document.querySelectorAll('.sezione').forEach(section => {
-  section.classList.add('fade-in');
-  observer.observe(section);
-});
-
-// MODALE PER IMMAGINI GALLERIA
-document.querySelectorAll('.galleria img').forEach(img => {
-  img.addEventListener('click', () => {
-    const modal = document.createElement('div');
-    modal.classList.add('modal-img');
-    modal.innerHTML = `
-      <div class="modal-content-img">
-        <span class="modal-close">&times;</span>
-        <img src="${img.src}" alt="${img.alt}">
-      </div>
-    `;
-    document.body.appendChild(modal);
-
-    modal.querySelector('.modal-close').onclick = () => modal.remove();
-    modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
-  });
-});
-
-// BOTTONE TORNA SU
-const scrollBtn = document.createElement('button');
-scrollBtn.id = 'scrollToTopBtn';
-scrollBtn.innerHTML = '↑';
-document.body.appendChild(scrollBtn);
-
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-window.addEventListener('scroll', () => {
-  scrollBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
-});
+}
