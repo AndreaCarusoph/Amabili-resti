@@ -201,20 +201,25 @@
     </div>
   </section>
 
-  <!-- CONTATTI -->
-  <section id="contatti">
-    <h2>Contatti</h2>
-    <p>Email: <a href="mailto:info@andreacaruso.art">info@andreacaruso.art</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/andrea_caruso_photography" target="_blank">@andrea_caruso_photography</a></p>
-    <p>Telefono: 388 726 2828</p>
+<section id="contatti" class="sezione">
+  <h2>Contatti</h2>
+  <p>Email: <a href="mailto:info@andreacaruso.art">info@andreacaruso.art</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/andrea_caruso_photography" target="_blank">@andrea_caruso_photography</a></p>
+  <p>Telefono: 388 726 2828</p>
 
-    <form action="https://formspree.io/f/yourformid" method="POST">
-      <input type="text" name="nome" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="messaggio" rows="5" placeholder="Messaggio" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
-  </section>
+  <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="messaggio">Messaggio</label>
+    <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+
+    <button type="submit">Invia</button>
+  </form>
+</section>
 
   <!-- MODALE -->
   <div id="modal" class="modal" onclick="chiudiModale()">
@@ -251,6 +256,7 @@
   </script>
 </body>
 </html>
+
 
 
 
