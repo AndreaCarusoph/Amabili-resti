@@ -4,12 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amabili Resti – Mostra Fotografica</title>
+
+  <!-- SEO / SOCIAL -->
+  <meta name="description" content="Mostra fotografica di denuncia sul femminicidio. Immagini forti, realistiche, emotive. A cura di Andrea Caruso.">
+  <meta property="og:title" content="Amabili Resti – Mostra Fotografica">
+  <meta property="og:description" content="Il grido di chi non ce l’ha fatta. Una mostra che scuote.">
+  <meta property="og:image" content="img/coming-soon.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.andreacaruso.art">
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    body.caricamento {
+      opacity: 0;
+      transition: opacity 1s ease;
     }
 
     body {
@@ -17,6 +27,7 @@
       background-color: #0c0c0c;
       color: #f5f5f5;
       scroll-behavior: smooth;
+      opacity: 1;
     }
 
     header {
@@ -45,9 +56,7 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: crimson;
-    }
+    nav a:hover {color: crimson;}
 
     .sezione {
       display: none;
@@ -76,6 +85,7 @@
       border-radius: 8px;
       margin-bottom: 15px;
       border: 4px solid crimson;
+      box-shadow: 0 0 30px rgba(255,0,0,0.3);
     }
 
     .galleria {
@@ -95,13 +105,14 @@
       border-radius: 8px;
       border: 2px solid crimson;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0.9;
     }
 
     .foto img:hover {
       transform: scale(1.05);
       opacity: 1;
+      box-shadow: 0 0 15px crimson;
     }
 
     .didascalia {
@@ -149,8 +160,13 @@
       transition: background-color 0.3s ease;
     }
 
-    .contact-form button:hover {
-      background-color: #a30000;
+    .contact-form button:hover {background-color: #a30000;}
+
+    #form-success {
+      display: none;
+      color: lightgreen;
+      margin-top: 10px;
+      font-weight: bold;
     }
 
     /* Modale immagine fullscreen */
@@ -194,12 +210,10 @@
       border-top: 2px solid crimson;
     }
 
-    a {
-      color: crimson;
-    }
+    a {color: crimson;}
   </style>
 </head>
-<body>
+<body class="caricamento" oncontextmenu="return false">
 
   <header>
     <div class="logo">Amabili Resti</div>
@@ -231,15 +245,14 @@
     <div class="galleria">
       <div class="foto"><img src="img/foto1.jpg" alt="Foto 1" onclick="apriModale(this.src)"><p class="didascalia">Foto 1 – Esplode il silenzio</p></div>
       <div class="foto"><img src="img/foto2.jpg" alt="Foto 2" onclick="apriModale(this.src)"><p class="didascalia">Foto 2 – Thiago</p></div>
-     <div class="foto"><img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)"><p class="didascalia">Foto 3 – Frammenti di vita</p></div>
-<div class="foto"><img src="img/foto4.jpg" alt="Foto 4" onclick="apriModale(this.src)"><p class="didascalia">Foto 4 – Terra crudele</p></div>
-<div class="foto"><img src="img/foto5.jpg" alt="Foto 5" onclick="apriModale(this.src)"><p class="didascalia">Foto 5 – Caduta a pezzi</p></div>
-<div class="foto"><img src="img/foto6.jpg" alt="Foto 6" onclick="apriModale(this.src)"><p class="didascalia">Foto 6 – L’ultimo silenzio</p></div>
-<div class="foto"><img src="img/foto7.jpg" alt="Foto 7" onclick="apriModale(this.src)"><p class="didascalia">Foto 7 – Quel che rimane</p></div>
-<div class="foto"><img src="img/foto8.jpg" alt="Foto 8" onclick="apriModale(this.src)"><p class="didascalia">Foto 8 – Titolo da definire</p></div>
-<div class="foto"><img src="img/foto9.jpg" alt="Foto 9" onclick="apriModale(this.src)"><p class="didascalia">Foto 9 – Titolo da definire</p></div>
-<div class="foto"><img src="img/foto10.jpg" alt="Foto 10" onclick="apriModale(this.src)"><p class="didascalia">Foto 10 – Titolo da definire</p></div>
-
+      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)"><p class="didascalia">Foto 3 – Frammenti di vita</p></div>
+      <div class="foto"><img src="img/foto4.jpg" alt="Foto 4" onclick="apriModale(this.src)"><p class="didascalia">Foto 4 – Terra crudele</p></div>
+      <div class="foto"><img src="img/foto5.jpg" alt="Foto 5" onclick="apriModale(this.src)"><p class="didascalia">Foto 5 – Caduta a pezzi</p></div>
+      <div class="foto"><img src="img/foto6.jpg" alt="Foto 6" onclick="apriModale(this.src)"><p class="didascalia">Foto 6 – L’ultimo silenzio</p></div>
+      <div class="foto"><img src="img/foto7.jpg" alt="Foto 7" onclick="apriModale(this.src)"><p class="didascalia">Foto 7 – Quel che rimane</p></div>
+      <div class="foto"><img src="img/foto8.jpg" alt="Foto 8" onclick="apriModale(this.src)"><p class="didascalia">Foto 8 – Titolo da definire</p></div>
+      <div class="foto"><img src="img/foto9.jpg" alt="Foto 9" onclick="apriModale(this.src)"><p class="didascalia">Foto 9 – Titolo da definire</p></div>
+      <div class="foto"><img src="img/foto10.jpg" alt="Foto 10" onclick="apriModale(this.src)"><p class="didascalia">Foto 10 – Titolo da definire</p></div>
     </div>
   </section>
 
@@ -261,6 +274,7 @@
       <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
 
       <button type="submit">Invia</button>
+      <div id="form-success">Messaggio inviato con successo!</div>
     </form>
   </section>
 
@@ -277,18 +291,20 @@
 
   <!-- SCRIPT -->
   <script>
+    // fade-in all'apertura
+    window.addEventListener("load", () => {
+      document.body.classList.remove("caricamento");
+    });
+
     const sezioni = document.querySelectorAll(".sezione");
 
     function mostraSezione(id) {
-      sezioni.forEach(sec => {
-        if (sec.id === id) {
-          sec.classList.add("attiva");
-        } else {
-          sec.classList.remove("attiva");
-        }
-      });
-      // scrolla sempre in cima
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      sezioni.forEach(sec => sec.classList.remove("attiva"));
+      const attiva = document.getElementById(id);
+      if (attiva) {
+        attiva.classList.add("attiva");
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
     }
 
     function apriModale(src) {
@@ -300,12 +316,34 @@
       document.getElementById("modal").style.display = "none";
     }
 
+    // ESC chiude la modale
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') chiudiModale();
+    });
+
+    // FormSpree senza ricaricare
+    document.querySelector(".contact-form")?.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = this;
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById("form-success").style.display = "block";
+          form.reset();
+        }
+      });
+    });
+
     // Mostra la home di default
     document.addEventListener("DOMContentLoaded", () => mostraSezione('home'));
   </script>
 
 </body>
 </html>
+
 
 
 
