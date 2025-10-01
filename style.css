@@ -295,12 +295,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 120px auto 30px;
+  margin: 60px auto 20px; /* margini ridotti e centrati */
+  max-width: 900px; /* limita la larghezza massima del contenitore */
 }
 
 .hero-video {
   width: 100%;
-  max-width: 450px;
+  max-width: 600px; /* video più contenuto */
   height: auto;
   border: 4px solid crimson;
   border-radius: 12px;
