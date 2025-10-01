@@ -226,19 +226,12 @@
   </section>
 
   <!-- GALLERIA -->
-  <section id="galleria">
+  <section id="galleria" class="sezione">
     <h2>Galleria Fotografica</h2>
     <div class="galleria">
       <div class="foto"><img src="img/foto1.jpg" alt="Foto 1" onclick="apriModale(this.src)"><p class="didascalia">Foto 1 – Esplode il silenzio</p></div>
       <div class="foto"><img src="img/foto2.jpg" alt="Foto 2" onclick="apriModale(this.src)"><p class="didascalia">Foto 2 – Thiago</p></div>
-      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)"><p class="didascalia">Foto 3 – Frammenti di vita</p></div>
-      <div class="foto"><img src="img/foto4.jpg" alt="Foto 4" onclick="apriModale(this.src)"><p class="didascalia">Foto 4 – Terra crudele</p></div>
-      <div class="foto"><img src="img/foto5.jpg" alt="Foto 5" onclick="apriModale(this.src)"><p class="didascalia">Foto 5 – Caduta a pezzi</p></div>
-      <div class="foto"><img src="img/foto6.jpg" alt="Foto 6" onclick="apriModale(this.src)"><p class="didascalia">Foto 6 – L’ultimo silenzio</p></div>
-      <div class="foto"><img src="img/foto7.jpg" alt="Foto 7" onclick="apriModale(this.src)"><p class="didascalia">Foto 7 – Quel che rimane</p></div>
-      <div class="foto"><img src="img/foto8.jpg" alt="Foto 8" onclick="apriModale(this.src)"><p class="didascalia">Foto 8 – Titolo da definire</p></div>
-      <div class="foto"><img src="img/foto9.jpg" alt="Foto 9" onclick="apriModale(this.src)"><p class="didascalia">Foto 9 – Titolo da definire</p></div>
-      <div class="foto"><img src="img/foto10.jpg" alt="Foto 10" onclick="apriModale(this.src)"><p class="didascalia">Foto 10 – Titolo da definire</p></div>
+      <!-- altre foto -->
     </div>
   </section>
 
@@ -249,7 +242,7 @@
     <p>Instagram: <a href="https://www.instagram.com/andrea_caruso_photography" target="_blank">@andrea_caruso_photography</a></p>
     <p>Telefono: 388 726 2828</p>
 
-    <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+    <form action="https://formspree.io/f/mayrwybg" method="POST" class="contact-form">
       <label for="nome">Nome</label>
       <input type="text" id="nome" name="nome" required>
 
@@ -279,9 +272,15 @@
     const sezioni = document.querySelectorAll(".sezione");
 
     function mostraSezione(id) {
-      sezioni.forEach(sec => sec.classList.remove("attiva"));
-      const attiva = document.getElementById(id);
-      if (attiva) attiva.classList.add("attiva");
+      sezioni.forEach(sec => {
+        if (sec.id === id) {
+          sec.classList.add("attiva");
+        } else {
+          sec.classList.remove("attiva");
+        }
+      });
+      // scrolla sempre in cima
+      window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     function apriModale(src) {
@@ -292,9 +291,13 @@
     function chiudiModale() {
       document.getElementById("modal").style.display = "none";
     }
+
+    // Mostra la home di default
+    document.addEventListener("DOMContentLoaded", () => mostraSezione('home'));
   </script>
 
 </body>
 </html>
+
 
 
