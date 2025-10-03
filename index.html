@@ -4,12 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amabili Resti – Mostra Fotografica</title>
-
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap">
-
-  <!-- Collegamento al file CSS esterno -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap">
 </head>
 <body>
 
@@ -31,7 +27,7 @@
         <source src="video1.mp4" type="video/mp4">
       </video>
     </div>
-    <p style="text-align:center; font-style: italic;">A cura di Andrea Caruso</p>
+    <p class="curatore">A cura di Andrea Caruso</p>
   </section>
 
   <!-- SULLA MOSTRA -->
@@ -48,46 +44,16 @@
   <section id="galleria" class="sezione">
     <h2>Galleria Fotografica</h2>
     <div class="galleria">
-      <div class="foto">
-        <img src="img/foto1.jpg" alt="Foto 1" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 1 – Esplode il silenzio</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto2.jpg" alt="Foto 2" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 2 – Thiago</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 3 – Frammenti di vita</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto4.jpg" alt="Foto 4" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 4 – Terra crudele</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto5.jpg" alt="Foto 5" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 5 – Caduta a pezzi</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto6.jpg" alt="Foto 6" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 6 – L’ultimo silenzio</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto7.jpg" alt="Foto 7" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 7 – Quel che rimane</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto8.jpg" alt="Foto 8" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 8 – Titolo da definire</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto9.jpg" alt="Foto 9" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 9 – Titolo da definire</p>
-      </div>
-      <div class="foto">
-        <img src="img/foto10.jpg" alt="Foto 10" onclick="apriModale(this.src)">
-        <p class="didascalia">Foto 10 – Titolo da definire</p>
-      </div>
+      <div class="foto"><img src="img/foto1.jpg" alt="Foto 1" onclick="apriModale(this.src)"><p class="didascalia">Foto 1 – Esplode il silenzio</p></div>
+      <div class="foto"><img src="img/foto2.jpg" alt="Foto 2" onclick="apriModale(this.src)"><p class="didascalia">Foto 2 – Thiago</p></div>
+      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)"><p class="didascalia">Foto 3 – Frammenti di vita</p></div>
+      <div class="foto"><img src="img/foto4.jpg" alt="Foto 4" onclick="apriModale(this.src)"><p class="didascalia">Foto 4 – Terra crudele</p></div>
+      <div class="foto"><img src="img/foto5.jpg" alt="Foto 5" onclick="apriModale(this.src)"><p class="didascalia">Foto 5 – Caduta a pezzi</p></div>
+      <div class="foto"><img src="img/foto6.jpg" alt="Foto 6" onclick="apriModale(this.src)"><p class="didascalia">Foto 6 – L’ultimo silenzio</p></div>
+      <div class="foto"><img src="img/foto7.jpg" alt="Foto 7" onclick="apriModale(this.src)"><p class="didascalia">Foto 7 – Quel che rimane</p></div>
+      <div class="foto"><img src="img/foto8.jpg" alt="Foto 8" onclick="apriModale(this.src)"><p class="didascalia">Foto 8 – Titolo da definire</p></div>
+      <div class="foto"><img src="img/foto9.jpg" alt="Foto 9" onclick="apriModale(this.src)"><p class="didascalia">Foto 9 – Titolo da definire</p></div>
+      <div class="foto"><img src="img/foto10.jpg" alt="Foto 10" onclick="apriModale(this.src)"><p class="didascalia">Foto 10 – Titolo da definire</p></div>
     </div>
   </section>
 
@@ -101,13 +67,10 @@
     <form action="https://formspree.io/f/xnnzvwyo" method="POST" class="contact-form">
       <label for="nome">Nome</label>
       <input type="text" id="nome" name="nome" required>
-
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
-
       <label for="messaggio">Messaggio</label>
       <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
-
       <button type="submit">Invia</button>
     </form>
   </section>
@@ -145,5 +108,6 @@
 
     document.addEventListener("DOMContentLoaded", () => mostraSezione('home'));
   </script>
+
 </body>
 </html>
