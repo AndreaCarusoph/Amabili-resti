@@ -1,16 +1,8 @@
 /* BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
   color: #f5f5f5;
   line-height: 1.6;
@@ -30,15 +22,12 @@ header {
   z-index: 999;
   box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
 }
-
 .logo {
   font-size: 20px;
   font-weight: bold;
   color: crimson;
   letter-spacing: 1px;
 }
-
-/* LINK */
 nav a {
   color: white;
   margin-left: 25px;
@@ -46,54 +35,38 @@ nav a {
   font-weight: bold;
   transition: color 0.3s;
 }
-
-nav a:hover {
-  color: crimson;
-}
-
-a {
-  color: crimson;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+nav a:hover { color: crimson; }
 
 /* SEZIONI */
 .sezione {
   display: none;
-  padding: 100px 30px 50px;
+  padding: 100px 30px 40px;
+  min-height: 100vh;
   opacity: 0;
   transition: opacity 0.6s ease;
 }
+.sezione.attiva { display: block; opacity: 1; }
 
-.sezione.attiva {
-  display: block;
-  opacity: 1;
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  color: crimson;
 }
 
-/* HERO VIDEO */
-#home.sezione {
-  max-width: none;
-  margin: 0;
-  padding: 100px 0 50px;
-}
-
+/* HOME VIDEO */
+#home.sezione { max-width: none; margin: 0; padding: 80px 0 20px; }
 #home .hero-video-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin: 0 auto 20px;
-  padding: 0 16px;
   max-width: 820px;
+  margin: 0 auto 15px;
+  padding: 0 12px;
 }
-
 #home .hero-video {
   display: block;
   width: 100%;
-  max-width: 780px;  /* ingrandito */
+  max-width: 780px; /* leggermente più grande */
   height: auto;
   margin: 0 auto;
   border: 4px solid crimson;
@@ -101,63 +74,35 @@ a:hover {
   box-shadow: 0 0 25px rgba(220,20,60,0.5);
   object-fit: cover;
 }
-
 .curatore {
-  margin-top: 15px;
+  text-align: center;
+  margin-top: 10px;
   font-style: italic;
   font-weight: bold;
   color: #ccc;
-  text-align: center;
 }
 
 /* SULLA MOSTRA */
-#mostra h2 {
-  color: crimson;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#mostra p {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
+#mostra p { font-size: 18px; margin-bottom: 15px; }
 
 /* GALLERIA */
-#galleria h2 {
-  color: crimson;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
+#galleria h2 { text-align: center; margin-bottom: 30px; }
 .galleria {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
 }
-
-.foto {
-  width: 250px;
-  text-align: center;
-}
-
+.foto { width: 250px; text-align: center; }
 .foto img {
   width: 100%;
-  height: auto;
   border: 3px solid crimson;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.85;
-  object-fit: cover;
+  opacity: 0.9;
 }
-
-.foto img:hover {
-  transform: scale(1.05);
-  opacity: 1;
-}
-
+.foto img:hover { transform: scale(1.05); opacity: 1; }
 .foto p {
   margin-top: 10px;
   font-style: italic;
@@ -166,96 +111,12 @@ a:hover {
 }
 
 /* CONTATTI */
-#contatti h2 {
-  color: crimson;
-  margin-bottom: 20px;
-}
-
-#contatti p,
-#contatti a {
+#contatti p, #contatti a {
   font-size: 16px;
   margin-bottom: 10px;
   color: #ddd;
   text-decoration: none;
 }
-
-form {
-  margin-top: 20px;
-  max-width: 500px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  background-color: #222;
-  color: white;
-  border: 1px solid #555;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: crimson;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background-color: #a30000;
-}
-
-/* MODALE IMMAGINI */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.95);
-}
-
-.modal-content {
-  display: block;
-  margin: auto;
-  max-width: 90%;
-  max-height: 80vh;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #aaa;
-}
-
-/* FOOTER */
-footer {
-  background-color: #1a1a1a;
-  color: crimson;
-  text-align: center;
-  padding: 20px;
-  font-size: 15px;
-  margin-top: 50px;
-  border-top: 2px solid crimson;
-}
-
-/* CONTATTI: form centrato e campi in colonna */
 .contact-form {
   max-width: 600px;
   margin: 20px auto;
@@ -263,14 +124,11 @@ footer {
   flex-direction: column;
   gap: 15px;
 }
-
 .contact-form label {
   color: #f5f5f5;
   font-weight: bold;
 }
-
-.contact-form input,
-.contact-form textarea {
+.contact-form input, .contact-form textarea {
   width: 100%;
   padding: 10px;
   background-color: #222;
@@ -279,7 +137,6 @@ footer {
   color: white;
   font-size: 16px;
 }
-
 .contact-form button {
   width: 120px;
   align-self: flex-end;
@@ -292,17 +149,46 @@ footer {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.contact-form button:hover { background-color: #a30000; }
 
-.contact-form button:hover {
-  background-color: #a30000;
+/* MODALE */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+.modal-content {
+  display: block;
+  margin: 50px auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+.close {
+  position: absolute;
+  top: 20px; right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover { color: #aaa; }
+
+/* FOOTER */
+footer {
+  background-color: #d31245;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  margin-top: 20px; /* meno spazio */
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  #home {
-    padding: 80px 0 30px;
-  }
-  #home .hero-video {
-    max-width: 95vw;
-  }
+  #home { padding: 60px 0 20px; }
+  #home .hero-video { max-width: 95vw; }
 }
