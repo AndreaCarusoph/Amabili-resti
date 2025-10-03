@@ -319,6 +319,41 @@ footer {
     max-width: 95vw;
   }
 }
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+  /* Header compatto */
+  header {
+    flex-wrap: wrap;              /* consente adattamento */
+    padding: 10px 20px;
+  }
+
+  .logo {
+    flex: 1 1 100%;               /* logo a tutta riga sopra */
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  nav {
+    flex: 1 1 100%;
+    justify-content: center;      /* centra il menu */
+    gap: 15px;
+    flex-wrap: wrap;              /* i link vanno a capo in modo ordinato */
+  }
+
+  nav a {
+    font-size: 14px;              /* più piccolo su mobile */
+  }
+
+  /* Footer più compatto */
+  footer {
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 5px;
+  }
+}
+
 
 
 
