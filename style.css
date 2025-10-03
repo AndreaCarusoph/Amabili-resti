@@ -14,6 +14,7 @@ body {
   background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
   color: #f5f5f5;
   line-height: 1.6;
+  overflow-x: hidden; /* evita scroll orizzontale */
 }
 
 /* HEADER */
@@ -105,6 +106,36 @@ nav ul li a:hover::after {
   margin-top: 15px;
   font-style: italic;
   font-weight: bold;
+  color: #ccc;
+}
+
+/* HOME VIDEO */
+#home.sezione {
+  max-width: none;
+  margin: 0;
+  padding: 100px 0 50px;
+}
+
+#home .hero-video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 0 16px;      /* respiro ai lati */
+  max-width: 720px;     /* contenitore centrato */
+}
+
+#home .hero-video {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  margin: 0 auto;
+  border: 4px solid crimson;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(220,20,60,0.5);
+  object-fit: cover;
 }
 
 /* SULLA MOSTRA */
@@ -251,7 +282,7 @@ footer {
   margin-top: 50px;
 }
 
-/* Contatti: form centrato e campi in colonna */
+/* CONTATTI: form centrato e campi in colonna */
 .contact-form {
   max-width: 600px;
   margin: 20px auto;
@@ -293,63 +324,12 @@ footer {
   background-color: #a30000;
 }
 
-/* HOME VIDEO DEFINITIVO */
-#home.sezione {
-  max-width: none;
-  margin: 0;
-  padding: 100px 0 50px;
-}
-
-#home .hero-video-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto 20px;
-  padding: 0 16px;      /* un filo di respiro ai lati */
-  max-width: 720px;     /* contenitore centrato */
-}
-
-#home .hero-video {
-  display: block;
-  width: 100%;
-  max-width: 680px;
-  height: auto;
-  margin: 0 auto;
-  border: 4px solid crimson;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(220,20,60,0.5);
-  object-fit: cover;
-}
-
-/* evita scroll orizzontale */
-html, body { overflow-x: hidden; }
-
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  #home { padding: 80px 0 30px; }
-  #home .hero-video { max-width: 95vw; }
+  #home {
+    padding: 80px 0 30px;
+  }
+  #home .hero-video {
+    max-width: 95vw;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
