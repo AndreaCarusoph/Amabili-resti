@@ -261,8 +261,9 @@ footer {
   text-align: center;
   padding: 15px;
   font-size: 15px;
-  margin-top: 15px;
+  margin-top: 5px; /* avvicina il footer al contenuto */
 }
+
 
 /* CONTATTI: form centrato e campi in colonna */
 .contact-form {
@@ -315,5 +316,6 @@ footer {
     max-width: 95vw;
   }
 }
+
 
 
