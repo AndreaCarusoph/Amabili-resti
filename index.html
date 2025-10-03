@@ -4,222 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amabili Resti – Mostra Fotografica</title>
+
+  <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0c0c0c;
-      color: #f5f5f5;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #1a1a1a;
-      padding: 20px 30px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 2px solid crimson;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      color: crimson;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: crimson;
-    }
-
-    .sezione {
-      display: none;
-      padding: 60px 30px;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-
-    .sezione.attiva {
-      display: block;
-      opacity: 1;
-    }
-
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 20px;
-      color: crimson;
-    }
-
-    /* --- VIDEO HOME --- */
-    #home.sezione {
-      max-width: none;
-      margin: 0;
-      padding: 100px 0 50px;
-    }
-
-    #home .hero-video-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: 0 auto 20px;
-      padding: 0 16px;
-      max-width: 720px;
-    }
-
-    #home .hero-video {
-      display: block;
-      width: 100%;
-      max-width: 680px;
-      height: auto;
-      margin: 0 auto;
-      border: 4px solid crimson;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(220,20,60,0.5);
-      object-fit: cover;
-    }
-
-    @media (max-width: 768px) {
-      #home { padding: 80px 0 30px; }
-      #home .hero-video { max-width: 95vw; }
-    }
-
-    .galleria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .foto {
-      max-width: 250px;
-      text-align: center;
-    }
-
-    .foto img {
-      width: 100%;
-      border-radius: 8px;
-      border: 2px solid crimson;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      opacity: 0.9;
-    }
-
-    .foto img:hover {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-
-    .didascalia {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 8px;
-      font-style: italic;
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 20px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-form label {
-      color: #f5f5f5;
-      font-weight: bold;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      background-color: #222;
-      border: 1px solid #555;
-      border-radius: 5px;
-      color: white;
-      font-size: 16px;
-    }
-
-    .contact-form button {
-      width: 120px;
-      align-self: flex-end;
-      padding: 10px;
-      background-color: crimson;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background-color: #a30000;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.95);
-    }
-
-    .modal-content {
-      display: block;
-      margin: 50px auto;
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 8px;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #1a1a1a;
-      color: crimson;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-      border-top: 2px solid crimson;
-    }
-
-    a {
-      color: crimson;
-    }
-  </style>
+  <!-- Collegamento al file CSS esterno -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="logo">Amabili Resti</div>
     <nav>
@@ -254,10 +48,46 @@
   <section id="galleria" class="sezione">
     <h2>Galleria Fotografica</h2>
     <div class="galleria">
-      <div class="foto"><img src="img/foto1.jpg" alt="Foto 1" onclick="apriModale(this.src)"><p class="didascalia">Foto 1 – Esplode il silenzio</p></div>
-      <div class="foto"><img src="img/foto2.jpg" alt="Foto 2" onclick="apriModale(this.src)"><p class="didascalia">Foto 2 – Thiago</p></div>
-      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)"><p class="didascalia">Foto 3 – Frammenti di vita</p></div>
-      <!-- ...altre foto... -->
+      <div class="foto">
+        <img src="img/foto1.jpg" alt="Foto 1" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 1 – Esplode il silenzio</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto2.jpg" alt="Foto 2" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 2 – Thiago</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto3.jpg" alt="Foto 3" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 3 – Frammenti di vita</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto4.jpg" alt="Foto 4" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 4 – Terra crudele</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto5.jpg" alt="Foto 5" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 5 – Caduta a pezzi</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto6.jpg" alt="Foto 6" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 6 – L’ultimo silenzio</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto7.jpg" alt="Foto 7" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 7 – Quel che rimane</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto8.jpg" alt="Foto 8" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 8 – Titolo da definire</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto9.jpg" alt="Foto 9" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 9 – Titolo da definire</p>
+      </div>
+      <div class="foto">
+        <img src="img/foto10.jpg" alt="Foto 10" onclick="apriModale(this.src)">
+        <p class="didascalia">Foto 10 – Titolo da definire</p>
+      </div>
     </div>
   </section>
 
@@ -271,10 +101,13 @@
     <form action="https://formspree.io/f/xnnzvwyo" method="POST" class="contact-form">
       <label for="nome">Nome</label>
       <input type="text" id="nome" name="nome" required>
+
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
+
       <label for="messaggio">Messaggio</label>
       <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+
       <button type="submit">Invia</button>
     </form>
   </section>
@@ -312,6 +145,5 @@
 
     document.addEventListener("DOMContentLoaded", () => mostraSezione('home'));
   </script>
-
 </body>
 </html>
